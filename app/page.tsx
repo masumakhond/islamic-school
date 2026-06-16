@@ -104,20 +104,51 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* PHILOSOPHY & SEO TEXT */}
-      <section className="py-24 bg-white px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-slate-800 mb-6">Balancing Deen and Duniya</h2>
-          <p className="text-lg text-slate-600 leading-relaxed mb-6">
-            At Al-Hikmah Academy, we understand the aspirations of modern Bangladeshi parents. You want your child to excel globally in science, technology, and literature, while remaining deeply rooted in Islamic morals and Sunnah.
-          </p>
-          <p className="text-lg text-slate-600 leading-relaxed">
-            Our upcoming campus is designed to provide a world-class educational environment, ensuring our students become the ethical leaders, scientists, and scholars of tomorrow.
-          </p>
+      {/* --- UPGRADED SECTION: PHILOSOPHY & SEO TEXT --- */}
+      <section className="relative py-24 px-4 bg-white overflow-hidden">
+        {/* Ambient background glows */}
+        <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/3 w-[500px] h-[500px] bg-emerald-100/40 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 w-[500px] h-[500px] bg-amber-100/30 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div className="relative max-w-5xl mx-auto">
+          {/* Elevated Floating Card */}
+          <div className="bg-white/80 backdrop-blur-xl rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 p-8 sm:p-16 text-center transition hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)]">
+            
+            {/* Open Book Icon */}
+            <div className="mx-auto w-16 h-16 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-8 rotate-3 shadow-sm border border-emerald-100">
+              <svg className="w-8 h-8 -rotate-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+              </svg>
+            </div>
+
+            {/* Main Heading with colored highlights */}
+            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-800 mb-8 tracking-tight">
+              Balancing <span className="text-emerald-700">Deen</span> and <span className="text-amber-500">Duniya</span>
+            </h2>
+
+            {/* Typography and Divider */}
+            <div className="max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl text-slate-700 leading-relaxed font-medium mb-8">
+                At Al-Hikmah Academy, we understand the aspirations of modern Bangladeshi parents. You want your child to excel globally in science, technology, and literature, while remaining deeply rooted in Islamic morals and Sunnah.
+              </p>
+              
+              {/* Elegant Dot & Line Divider */}
+              <div className="flex items-center justify-center gap-4 mb-8 opacity-70">
+                <div className="w-16 h-0.5 bg-gradient-to-r from-transparent to-emerald-300"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
+                <div className="w-16 h-0.5 bg-gradient-to-l from-transparent to-emerald-300"></div>
+              </div>
+
+              <p className="text-lg text-slate-500 leading-relaxed">
+                Our upcoming campus is designed to provide a world-class educational environment, ensuring our students become the ethical leaders, scientists, and scholars of tomorrow.
+              </p>
+            </div>
+
+          </div>
         </div>
       </section>
 
-      {/* --- NEW SECTION: CAMPUS FACILITIES --- */}
+      {/* CAMPUS FACILITIES SECTION */}
       <section className="relative bg-white py-24 overflow-hidden border-t border-slate-100">
         
         {/* Abstract Light Green Background Shapes */}
@@ -174,7 +205,6 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
-      {/* --- END NEW SECTION --- */}
 
       {/* WHY CHOOSE US (USPs) */}
       <section className="py-24 bg-slate-50 px-4 border-t border-slate-100">
