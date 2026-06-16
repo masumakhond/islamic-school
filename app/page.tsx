@@ -117,6 +117,65 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* --- NEW SECTION: CAMPUS FACILITIES --- */}
+      <section className="relative bg-white py-24 overflow-hidden border-t border-slate-100">
+        
+        {/* Abstract Light Green Background Shapes */}
+        <div className="absolute top-0 left-0 w-full lg:w-1/2 h-full overflow-hidden pointer-events-none z-0">
+          <div className="absolute -left-[30%] -top-[10%] w-[80%] h-[120%] rounded-full border-[80px] border-emerald-50/80"></div>
+          <div className="absolute -left-[10%] top-[20%] w-[80%] h-[120%] rounded-full border-[80px] border-emerald-50/80"></div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            
+            {/* Left Content Column */}
+            <div className="order-2 lg:order-1">
+              <div className="w-12 h-1 bg-red-500 mb-6"></div>
+              <h3 className="text-sm font-bold uppercase tracking-widest text-slate-600 mb-2">Come and See</h3>
+              <h2 className="text-5xl lg:text-6xl font-extrabold text-emerald-950 leading-none mb-6 tracking-tight">
+                OUR CAMPUS<br />FACILITIES
+              </h2>
+              <h4 className="text-xl font-bold text-emerald-900 mb-4">A World-Class Learning Environment</h4>
+              <p className="text-slate-600 leading-relaxed mb-8">
+                Purpose-built with learning and play in mind, in stunning natural surroundings, there's plenty to inspire our students, both inside and outside the classroom. We're also so fortunate to have access to over 5.5 acres of land that offer extensive facilities.
+              </p>
+              <Link href="/campus" className="inline-block bg-emerald-950 text-white px-8 py-3.5 rounded-full font-bold text-sm hover:bg-emerald-800 transition shadow-lg">
+                LEARN MORE
+              </Link>
+            </div>
+
+            {/* Right Image Column */}
+            <div className="order-1 lg:order-2 relative mt-8 lg:mt-0 pr-6 pb-6">
+              {/* The Offset Green Block */}
+              <div className="absolute top-6 left-6 w-full h-full bg-emerald-600 z-0 rounded-sm"></div>
+              
+              {/* The Main Image Container */}
+              <div className="relative z-10 w-full aspect-[4/3] shadow-2xl overflow-hidden rounded-sm bg-slate-200">
+                {/* Placeholder Image using Unsplash */}
+                <img 
+                  src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1600&auto=format&fit=crop" 
+                  alt="Al-Hikmah Campus Facilities"
+                  className="w-full h-full object-cover"
+                />
+                
+                {/* Floating 'Book a Tour' Button */}
+                <div className="absolute bottom-6 left-6">
+                  <Link href="/book-tour" className="inline-flex items-center gap-2 bg-amber-400 text-emerald-950 px-6 py-3.5 rounded-full font-bold text-sm hover:bg-amber-300 transition shadow-lg group">
+                    BOOK A TOUR
+                    <svg className="w-4 h-4 transform group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      {/* --- END NEW SECTION --- */}
+
       {/* WHY CHOOSE US (USPs) */}
       <section className="py-24 bg-slate-50 px-4 border-t border-slate-100">
         <div className="max-w-7xl mx-auto">
