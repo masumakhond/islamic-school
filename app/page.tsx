@@ -2,7 +2,7 @@ import Link from "next/link";
 import { getSortedPostsData } from "@/lib/posts";
 import type { Metadata } from "next";
 
-// 1. NEXT.JS SEO METADATA (Crucial for Google Ranking)
+// NEXT.JS SEO METADATA
 export const metadata: Metadata = {
   title: "Al-Hikmah International School | Modern Islamic Education in Bangladesh",
   description: "An upcoming modern Islamic school in Bangladesh offering English medium education, Hifz, and Tarbiyah. Pre-register for the 2026-2027 academic year.",
@@ -10,12 +10,27 @@ export const metadata: Metadata = {
 };
 
 export default async function HomePage() {
-  // Fetch latest 2 news/blog posts for the SEO content section
   const latestPosts = getSortedPostsData().slice(0, 2);
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 font-sans leading-relaxed">
       
+      {/* INLINE ANIMATION STYLES */}
+      <style>{`
+        @keyframes fadeUp {
+          0% { opacity: 0; transform: translateY(40px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-up {
+          animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+          opacity: 0;
+        }
+        .delay-100 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.6s; }
+        .delay-500 { animation-delay: 1.0s; }
+        .delay-700 { animation-delay: 1.4s; }
+      `}</style>
+
       {/* HEADER */}
       <header className="bg-white shadow-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
@@ -34,34 +49,57 @@ export default async function HomePage() {
         </div>
       </header>
 
-      {/* HERO SECTION (Lead Generation Focus) */}
-      <section className="relative bg-slate-900 text-white py-24 sm:py-32 overflow-hidden">
-        <div className="absolute inset-0 opacity-40 bg-[url('https://www.transparenttextures.com/patterns/arabesque.png')]"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-emerald-900/90 to-slate-900/90"></div>
+      {/* STYLISH VIDEO HERO SECTION */}
+      <section className="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden">
         
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
-          <span className="inline-block py-1 px-3 rounded-full bg-amber-500/20 text-amber-400 font-bold text-sm tracking-widest uppercase mb-6 border border-amber-500/30">
+        {/* Background Video */}
+        {/* 'autoPlay', 'loop', 'muted', and 'playsInline' are REQUIRED for browsers to allow autoplay */}
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        >
+          <source src="https://resources.finalsite.net/videos/t_video_h265_1080/v1751343122/isdbdorg/zpjqxvr4phtpevvdrsso/Website12SecVideo.mp4" type="video/mp4" />
+        </video>
+
+        {/* Gradient Dark Overlay (Ensures text is readable over the video) */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-emerald-950/75 to-slate-950/90 z-10"></div>
+        
+        {/* Animated Content */}
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+          
+          {/* Heading 1: The Tagline */}
+          <span className="animate-fade-up delay-100 inline-block py-1.5 px-4 rounded-full bg-amber-500/20 text-amber-400 font-bold text-sm tracking-widest uppercase mb-6 border border-amber-500/30 backdrop-blur-md">
             Opening Insha'Allah 2026
           </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight mb-6">
+          
+          {/* Heading 2: The Main Title */}
+          <h1 className="animate-fade-up delay-300 text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight drop-shadow-2xl">
             Redefining <span className="text-amber-400">Islamic Education</span><br /> in Bangladesh
           </h1>
-          <p className="max-w-2xl mx-auto text-lg sm:text-xl text-slate-300 mb-10">
-            A state-of-the-art campus blending the National English Version curriculum with rigorous Quranic Hifz and authentic Tarbiyah.
+          
+          {/* Heading 3: The Subtitle */}
+          <p className="animate-fade-up delay-500 max-w-2xl mx-auto text-xl sm:text-2xl text-emerald-50 mb-10 font-medium drop-shadow-md">
+            Nurturing Faith. Inspiring Excellence. Building Character.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/pre-register" className="bg-amber-500 text-slate-900 px-8 py-3.5 rounded-full font-bold text-lg hover:bg-amber-400 transition shadow-lg">
+          
+          {/* Buttons */}
+          <div className="animate-fade-up delay-700 flex flex-col sm:flex-row justify-center gap-5 w-full sm:w-auto">
+            <Link href="/pre-register" className="bg-amber-500 text-slate-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-amber-400 transition shadow-[0_0_30px_rgba(245,158,11,0.3)]">
               Admissions Query
             </Link>
-            <Link href="/curriculum" className="bg-transparent border-2 border-slate-500 text-white px-8 py-3.5 rounded-full font-bold text-lg hover:border-emerald-400 hover:text-emerald-400 transition">
-              Explore Curriculum
+            <Link href="/campus" className="bg-transparent border-2 border-white/60 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 hover:border-white transition backdrop-blur-sm">
+              Explore Campus
             </Link>
           </div>
+
         </div>
       </section>
 
       {/* PHILOSOPHY & SEO TEXT */}
-      <section className="py-20 bg-white px-4">
+      <section className="py-24 bg-white px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-slate-800 mb-6">Balancing Deen and Duniya</h2>
           <p className="text-lg text-slate-600 leading-relaxed mb-6">
@@ -74,7 +112,7 @@ export default async function HomePage() {
       </section>
 
       {/* WHY CHOOSE US (USPs) */}
-      <section className="py-20 bg-slate-50 px-4 border-t border-slate-100">
+      <section className="py-24 bg-slate-50 px-4 border-t border-slate-100">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-slate-800">Why Choose Al-Hikmah?</h2>
@@ -102,7 +140,7 @@ export default async function HomePage() {
       </section>
 
       {/* DYNAMIC SEO BLOG SECTION */}
-      <section className="bg-white py-20 px-4 border-t border-slate-100">
+      <section className="bg-white py-24 px-4 border-t border-slate-100">
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-end mb-10">
             <div>
@@ -143,11 +181,6 @@ export default async function HomePage() {
             <p className="text-sm leading-relaxed mb-6">
               Preparing the next generation of Muslim professionals and scholars in Bangladesh.
             </p>
-            <div className="flex space-x-4">
-              {/* Social Placeholders */}
-              <div className="w-8 h-8 rounded-full bg-slate-800 hover:bg-emerald-600 transition cursor-pointer"></div>
-              <div className="w-8 h-8 rounded-full bg-slate-800 hover:bg-emerald-600 transition cursor-pointer"></div>
-            </div>
           </div>
           <div>
             <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-sm">Quick Links</h4>
@@ -176,12 +209,8 @@ export default async function HomePage() {
             </ul>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto border-t border-slate-800 mt-12 pt-8 text-sm text-center flex flex-col md:flex-row justify-between items-center">
+        <div className="max-w-7xl mx-auto border-t border-slate-800 mt-12 pt-8 text-sm text-center">
           <p>&copy; {new Date().getFullYear()} Al-Hikmah Academy Bangladesh. All rights reserved.</p>
-          <div className="mt-4 md:mt-0 space-x-4">
-            <Link href="/privacy" className="hover:text-white transition">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-white transition">Terms of Service</Link>
-          </div>
         </div>
       </footer>
     </div>
