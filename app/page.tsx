@@ -61,7 +61,7 @@ export default async function HomePage() {
           playsInline 
           className="absolute inset-0 w-full h-full object-cover z-0"
         >
-          <source src="https://resources.finalsite.net/videos/t_video_h265_1080/v1751343122/isdbdorg/zpjqxvr4phtpevvdrsso/Website12SecVideo.mp4" type="video/mp4" />
+          <source src="https://youtu.be/paWsaaFwpiA?si=hZydKSwQhVEUw7wo" type="video/mp4" />
         </video>
 
         {/* Gradient Dark Overlay (Ensures text is readable over the video) */}
