@@ -52,40 +52,35 @@ export default async function HomePage() {
       {/* STYLISH VIDEO HERO SECTION */}
       <section className="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden">
         
-        {/* Background Video */}
-        {/* 'autoPlay', 'loop', 'muted', and 'playsInline' are REQUIRED for browsers to allow autoplay */}
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline 
-          className="absolute inset-0 w-full h-full object-cover z-0"
-        >
-          <source src="https://youtu.be/paWsaaFwpiA?si=hZydKSwQhVEUw7wo" type="video/mp4" />
-        </video>
+        {/* Background YouTube Video */}
+        {/* The pointer-events-none prevents users from clicking/pausing the YouTube video */}
+        <div className="absolute inset-0 w-full h-full z-0 pointer-events-none overflow-hidden bg-slate-900">
+          <iframe
+            src="https://www.youtube.com/embed/paWsaaFwpiA?autoplay=1&mute=1&loop=1&playlist=paWsaaFwpiA&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+            className="absolute top-1/2 left-1/2 w-[100vw] h-[56.25vw] min-h-[100vh] min-w-[177.77vh] -translate-x-1/2 -translate-y-1/2"
+            allow="autoplay; encrypted-media"
+            frameBorder="0"
+          ></iframe>
+        </div>
 
         {/* Gradient Dark Overlay (Ensures text is readable over the video) */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-emerald-950/75 to-slate-950/90 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-emerald-950/80 to-slate-950/90 z-10"></div>
         
         {/* Animated Content */}
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
           
-          {/* Heading 1: The Tagline */}
           <span className="animate-fade-up delay-100 inline-block py-1.5 px-4 rounded-full bg-amber-500/20 text-amber-400 font-bold text-sm tracking-widest uppercase mb-6 border border-amber-500/30 backdrop-blur-md">
             Opening Insha'Allah 2026
           </span>
           
-          {/* Heading 2: The Main Title */}
           <h1 className="animate-fade-up delay-300 text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight drop-shadow-2xl">
             Redefining <span className="text-amber-400">Islamic Education</span><br /> in Bangladesh
           </h1>
           
-          {/* Heading 3: The Subtitle */}
           <p className="animate-fade-up delay-500 max-w-2xl mx-auto text-xl sm:text-2xl text-emerald-50 mb-10 font-medium drop-shadow-md">
             Nurturing Faith. Inspiring Excellence. Building Character.
           </p>
           
-          {/* Buttons */}
           <div className="animate-fade-up delay-700 flex flex-col sm:flex-row justify-center gap-5 w-full sm:w-auto">
             <Link href="/pre-register" className="bg-amber-500 text-slate-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-amber-400 transition shadow-[0_0_30px_rgba(245,158,11,0.3)]">
               Admissions Query
