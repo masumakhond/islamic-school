@@ -17,13 +17,21 @@ export default async function HomePage() {
       
       {/* INLINE ANIMATION STYLES */}
       <style>{`
-        @keyframes fadeUp {
-          0% { opacity: 0; transform: translateY(40px); }
-          100% { opacity: 1; transform: translateY(0); }
+        @keyframes fadeUpScale {
+          0% { opacity: 0; transform: translateY(40px) scale(0.95); }
+          100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        @keyframes shimmer {
+          0% { background-position: 0% 50%; }
+          100% { background-position: 200% 50%; }
         }
         .animate-fade-up {
-          animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+          animation: fadeUpScale 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
           opacity: 0;
+        }
+        .animate-shimmer {
+          background-size: 200% auto;
+          animation: shimmer 4s linear infinite;
         }
         .delay-100 { animation-delay: 0.2s; }
         .delay-300 { animation-delay: 0.6s; }
@@ -53,7 +61,6 @@ export default async function HomePage() {
       <section className="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden">
         
         {/* Background YouTube Video */}
-        {/* The pointer-events-none prevents users from clicking/pausing the YouTube video */}
         <div className="absolute inset-0 w-full h-full z-0 pointer-events-none overflow-hidden bg-slate-900">
           <iframe
             src="https://www.youtube.com/embed/paWsaaFwpiA?autoplay=1&mute=1&loop=1&playlist=paWsaaFwpiA&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
@@ -63,7 +70,7 @@ export default async function HomePage() {
           ></iframe>
         </div>
 
-        {/* Gradient Dark Overlay (Ensures text is readable over the video) */}
+        {/* Gradient Dark Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-emerald-950/80 to-slate-950/90 z-10"></div>
         
         {/* Animated Content */}
@@ -74,7 +81,11 @@ export default async function HomePage() {
           </span>
           
           <h1 className="animate-fade-up delay-300 text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight drop-shadow-2xl">
-            Redefining <span className="text-amber-400">Islamic Education</span><br /> in Bangladesh
+            Redefining{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-100 to-amber-400 animate-shimmer drop-shadow-md">
+              Islamic Education
+            </span>
+            <br /> in Bangladesh
           </h1>
           
           <p className="animate-fade-up delay-500 max-w-2xl mx-auto text-xl sm:text-2xl text-emerald-50 mb-10 font-medium drop-shadow-md">
